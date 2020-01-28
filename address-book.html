@@ -2,27 +2,48 @@
 <html lang="en" dir="ltr">
   <head>
     <title>AddressBook</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/scripts.js"></script>
   </head>
   <body>
-    <h1>Address Book</h1>
-
-    <form id="address">
-      <label for="user-input">Please enter a First Name</label>
-      <input id="firstName" type="text">
-      <br>
-      <label for="user-input">Please enter a Last Name</label>
-      <input id="lastName" type="text">
-      <br>
-      <label for="user-input">Please enter a phone number</label>
-      <input id="phoneNumber" type="text">
-      <br>
-      <button id="submit">submit</button>
-    </form>
 
 
-    <span id="result">
-      <p></p>
+    <div class="container">
+      <h1>Address Book</h1>
+      <form id="address">
+        <label for="user-input">Please enter a First Name </label>
+        <input id="firstName" type="text">
+        <br>
+        <label for="user-input">Please enter a Last Name  </label>
+        <input id="lastName" type="text">
+        <br>
+        <label for="user-input">Please enter a phone number </label>
+        <input id="phoneNumber" type="text">
+        <br>
+        <button id="submit">submit</button>
+        <br>
+
+      </form>
+    </div>
+
+    <div class="container">
+      <form id="find">
+        <label for="user-input">Please enter a full name to find in the address book</label>
+        <input id="fullname" type="text">
+        <button id="findContact"> Find Contact </button>
+      </form>
+    </div>
+
+
+    <div class="container">
+      <h2>Address Book</h2>
+      <ul id="fullNameResult"> Name</ul>
+      <ul id="phoneNumberResult">Phone Number</ul>
+    </div>
+
+
+
   </body>
 </html>
