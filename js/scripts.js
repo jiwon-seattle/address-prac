@@ -21,11 +21,26 @@ $(document).ready(function() {
     for (var x=0; x <addressBook.contacts.length; x++) {
       if (full[full.length -1] == addressBook.contacts[x].fullName()) {
       var findId = addressBook.contacts[x].id
+      var findFull = addressBook.contacts[x].fullName()
+      var findResult = addressBook.findContact(findId)
+      console.log(findId)
+      console.log(findFull)
+      console.log(findResult)
       }
     }
 
-    $("#fullNameResult").append("<li>" + addressBook.findContact(findId).firstName + "</li>")
-    $("#phoneNumberResult").append("<li>" + addressBook.findContact(findId).phoneNumber + "</li>")
+
+
+
+    $("#delete").show();
+    $("#fullNameResult").text("")
+    $("#fullNameResult").append("<li>" + findResult.fullName() + "</li>"  +  '<input type="checkbox" name="deleteOption" val="1">')
+    $("#phoneNumberResult").text("")
+    $("#phoneNumberResult").append("<li>" + findResult.phoneNumber + "</li>")
+
+     //'<input type="checkbox" name="deleteOption" val=findResult.id>'
+
+    //console.log(checkedValue)
     //  addressBook.findContact(contact[0].id)
     //   $("#fullNameResult").append("<li>" + addressBook.contacts[addressBook.contacts.length -1].fullName() + " " + "</li>")
     //   $("#phoneNumberResult").append("<li>" + addressBook.contacts[addressBook.contacts.length -1].phoneNumber + " " + "</li>")
@@ -47,6 +62,24 @@ $(document).ready(function() {
 
     })
 
+    $("#deleteContact").click(function(event){
+      event.preventDefault();
+
+      if($("input:checkbox[name=deleteOption]:checked")) {
+        console.log(addressBook.deleteContact())
+      }
+
+
+
+    })
+
+    //  if($("#fullNameResult input:checkbox[name=deleteOption]:checked")) {
+    //  }
+    //
+    //
+    //
+    //   event.preventDefault();
+    // })
 
     // $("#find").submit(function(event){
     //   event.preventDefault();
